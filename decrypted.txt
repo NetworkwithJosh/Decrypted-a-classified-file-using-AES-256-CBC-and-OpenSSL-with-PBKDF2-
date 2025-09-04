@@ -1,1 +1,24 @@
+labex:project/ $ cd ~/project
+labex:project/ $ openssl -enc -aes-256-cbc -d -in classified.enc -out decrypted.txt -pbkdf2
+Invalid command '-enc'; type "help" for a list.
+labex:project/ $ openssl enc -aes-256-cbc -d -in classified.enc -out decrypted.txt -pbkdf2
+enter AES-256-CBC decryption password:
+bad decrypt
+808B90F5797F0000:error:1C800064:Provider routines:ossl_cipher_unpadblock:bad decrypt:../providers/implementations/ciphers/ciphercommon_block.c:129:
+labex:project/ $ openssl enc -aes-256-cbc -d -in classified.enc -out decrypted.txt -pbkdf2
+enter AES-256-CBC decryption password:
+labex:project/ $ cat decryption.txt
+cat: decryption.txt: No such file or directory
+labex:project/ $ cat decrypted.txt
+Top secret: Project X launch scheduled for 2025-01-01
+labex:project/ $ cat ~/project/decrypted.txt
+Top secret: Project X launch scheduled for 2025-01-01
+labex:project/ $ cat checksum.txt
+cat: checksum.txt: No such file or directory
+labex:project/ $ cat decrypted.txt
+Top secret: Project X launch scheduled for 2025-01-01
+labex:project/ $ 
+
+
+
 Top secret: Project X launch scheduled for 2025-01-01
